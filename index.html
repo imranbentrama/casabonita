@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casa Bonita - Luxury apartment rentals with modern amenities and exceptional service. Book your perfect stay today.">
+    <title>Casa Bonita | Luxury Apartment Rentals</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Variables */
+        :root {
+            --primary: #1a4b8c;
+            --primary-light: #2a6bc5;
+            --primary-dark: #0d2a4d;
+            --secondary: #ff7e5f;
+            --accent: #4ecdc4;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --transition-slow: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.2rem;
+            line-height: 1.3;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(26, 75, 140, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(26, 75, 140, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(26, 75, 140, 0.2);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .btn-whatsapp:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* 3D Card Effect */
+        .card-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .card-3d-inner {
+            transition: var(--transition);
+            transform-style: preserve-3d;
+        }
+        
+        .card-3d:hover .card-3d-inner {
+            transform: rotateY(10deg) rotateX(5deg) translateZ(10px);
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        
+        .logo:hover::after {
+            width: 100%;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(26, 75, 140, 0.4);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .hamburger:hover {
+            transform: rotate(90deg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(26, 75, 140, 0.8) 0%, rgba(42, 107, 197, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+            opacity: 0.1;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            -webkit-text-fill-color: white;
+            background: none;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.03;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-text {
+            padding-right: 1rem;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+        
+        .about-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        /* Amenities Section */
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .amenity-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .amenity-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .amenity-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .amenity-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .amenity-card:hover .amenity-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--accent);
+        }
+        
+        /* Apartments Section */
+        .apartments {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .apartments::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.03;
+        }
+        
+        .apartments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .apartment-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .apartment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .apartment-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .apartment-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .apartment-card:hover .apartment-image img {
+            transform: scale(1.1);
+        }
+        
+        .apartment-content {
+            padding: 2rem;
+        }
+        
+        .apartment-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .apartment-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .apartment-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+        }
+        
+        .apartment-feature i {
+            color: var(--accent);
+        }
+        
+        /* Apartment Details Modal */
+        .apartment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 2rem;
+        }
+        
+        .apartment-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(50px);
+            transition: var(--transition);
+        }
+        
+        .apartment-modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+        
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-main-image {
+            grid-column: span 3;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+        
+        .modal-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-thumbnail {
+            height: 120px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .modal-thumbnail:hover {
+            transform: scale(1.05);
+        }
+        
+        .modal-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .modal-details {
+            padding: 0 2rem 2rem;
+        }
+        
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .modal-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .modal-feature i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+        
+        /* Booking Section */
+        .booking {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+        }
+        
+        .booking::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+            opacity: 0.03;
+        }
+        
+        .booking-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .booking-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .booking-step {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .booking-step:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 5px 15px rgba(26, 75, 140, 0.3);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.03;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover .contact-icon {
+            transform: scale(1.2);
+            color: var(--accent);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/diagmonds.png');
+            opacity: 0.05;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1.8rem;
+            -webkit-text-fill-color: var(--accent);
+            background: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            display: inline-block;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 10px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2.5rem;
+            right: 2.5rem;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2.5rem;
+            left: 2.5rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .about-text {
+                padding-right: 0;
+            }
+            
+            .modal-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .modal-main-image {
+                grid-column: span 2;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .social-links {
+                margin-top: 2rem;
+                flex-direction: row;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .modal-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-main-image {
+                grid-column: span 1;
+                height: 300px;
+            }
+            
+            .modal-thumbnail {
+                height: 80px;
+            }
+            
+            .scroll-to-top {
+                left: auto;
+                right: 2.5rem;
+                bottom: 9rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .apartments-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .amenity-card, .contact-card, .booking-step {
+                padding: 2rem 1.5rem;
+            }
+            
+            .modal-details {
+                padding: 0 1.5rem 1.5rem;
+            }
+            
+            .whatsapp-float, .scroll-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+            
+            .scroll-to-top {
+                bottom: 8rem;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .scroll-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            .header-container {
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding-top: 70px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .apartment-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Casa Bonita</a>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#amenities" class="nav-link">Amenities</a></li>
+                    <li><a href="#apartments" class="nav-link">Apartments</a></li>
+                    <li><a href="#booking" class="nav-link">Booking</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.instagram.com/casa_bonita_2025?igsh=MWtxdnQ2YzFoYWZpOQ%3D%3D&utm_source=qr" class="social-link" aria-label="Visit our Instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/share/19vZWGNo87/?mibextid=wwXIfr" class="social-link" aria-label="Visit our Facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://wa.me/212673625706?text=Hello, I want to inquire about available apartments at Casa Bonita" class="social-link" aria-label="Contact us on WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="floating">Experience Luxury Living at Casa Bonita</h1>
+            <p>Your perfect getaway awaits in our beautifully designed apartments, featuring modern amenities and exceptional service in prime locations.</p>
+            <div class="hero-buttons">
+                <a href="#apartments" class="btn btn-primary">View Apartments</a>
+                <a href="#booking" class="btn btn-secondary">Book via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Casa Bonita</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Casa Bonita offers premium apartment rentals designed for both short and long-term stays. Our properties combine modern elegance with comfort, providing everything you need for a perfect stay.</p>
+                    <p>Located in prime areas with easy access to local attractions, dining, and business districts, we ensure a memorable experience with personalized service and attention to detail.</p>
+                    <p>All our apartments are located in the same modern building, featuring high-end finishes, secure access, and dedicated parking.</p>
+                </div>
+                <div class="about-image card-3d">
+                    <div class="card-3d-inner">
+                        <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern apartment living room at Casa Bonita">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="section" id="amenities">
+        <div class="container">
+            <h2 class="section-title">Amenities & Features</h2>
+            <div class="amenities-grid">
+                <div class="amenity-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="amenity-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>High-Speed Wi-Fi</h3>
+                        <p>Stay connected with our complimentary high-speed internet access throughout your stay.</p>
+                    </div>
+                </div>
+                
+                <div class="amenity-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="amenity-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Parking Space</h3>
+                        <p>Secure and dedicated parking spaces for our guests' comfort and convenience.</p>
+                    </div>
+                </div>
+                
+                <div class="amenity-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="amenity-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security</h3>
+                        <p>Comprehensive security system and 24/7 surveillance for your safety and peace of mind.</p>
+                    </div>
+                </div>
+                
+                <div class="amenity-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="amenity-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <h3>Flexible Check-in</h3>
+                        <p>We accommodate your schedule with flexible check-in and check-out options when possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartments Section -->
+    <section class="section apartments" id="apartments">
+        <div class="container">
+            <h2 class="section-title">Our Apartments</h2>
+            <div class="apartments-grid">
+                <!-- Apartment 1 -->
+                <div class="apartment-card card-3d" data-apartment="1">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Studio">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 1 - 80m²</h3>
+                            <div class="apartment-price">$50 / night</div>
+                            <p>Spacious apartment with large living room, perfect for families or groups. Features a comfortable and modern design.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>4 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>80 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apartment 2 -->
+                <div class="apartment-card card-3d" data-apartment="2">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="One Bedroom Apartment">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 2 - 120m²</h3>
+                            <div class="apartment-price">$60 / night</div>
+                            <p>Luxurious apartment with expansive living area, ideal for larger families or groups seeking comfort and space.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>6 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>120 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apartment 3 -->
+                <div class="apartment-card card-3d" data-apartment="3">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Two Bedroom Apartment">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 3 - 120m²</h3>
+                            <div class="apartment-price">$60 / night</div>
+                            <p>Elegant apartment with generous living space, perfect for families who appreciate style and comfort.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>6 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>120 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apartment 4 -->
+                <div class="apartment-card card-3d" data-apartment="4">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Three Bedroom Apartment">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 4 - 80m²</h3>
+                            <div class="apartment-price">$55 / night</div>
+                            <p>Modern apartment with spacious layout, offering comfort and functionality for your stay.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>4 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>80 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apartment 5 -->
+                <div class="apartment-card card-3d" data-apartment="5">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1540518614846-7eded102d7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Penthouse">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 5 - 70m²</h3>
+                            <div class="apartment-price">$57 / night</div>
+                            <p>Cozy and well-designed apartment perfect for small families or couples seeking a comfortable retreat.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>4 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>70 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Apartment 6 -->
+                <div class="apartment-card card-3d" data-apartment="6">
+                    <div class="card-3d-inner">
+                        <div class="apartment-image">
+                            <img src="https://images.unsplash.com/photo-1555854876-c77ea01f84da?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Long-term Apartment">
+                        </div>
+                        <div class="apartment-content">
+                            <h3>Apartment 6 - 70m²</h3>
+                            <div class="apartment-price">$57 / night</div>
+                            <p>Charming apartment with efficient layout, ideal for longer stays with all the comforts of home.</p>
+                            <div class="apartment-features">
+                                <div class="apartment-feature">
+                                    <i class="fas fa-user"></i>
+                                    <span>4 people</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-bed"></i>
+                                    <span>1 large bed + 2 small beds</span>
+                                </div>
+                                <div class="apartment-feature">
+                                    <i class="fas fa-ruler-combined"></i>
+                                    <span>70 m²</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary view-details">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartment Details Modal -->
+    <div class="apartment-modal" id="apartmentModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal-gallery" id="modalGallery">
+                <!-- Images will be populated by JavaScript -->
+            </div>
+            <div class="modal-details" id="modalDetails">
+                <!-- Details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">Book via WhatsApp</h2>
+            <div class="booking-content">
+                <p>Book your favorite apartment easily via WhatsApp. Just choose the right apartment for you and contact us at the following number:</p>
+                
+                <div class="booking-steps">
+                    <div class="booking-step card-3d">
+                        <div class="card-3d-inner">
+                            <div class="step-number">1</div>
+                            <h3>Choose Apartment</h3>
+                            <p>Browse available apartment types and choose what suits your needs</p>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-step card-3d">
+                        <div class="card-3d-inner">
+                            <div class="step-number">2</div>
+                            <h3>Contact Us</h3>
+                            <p>Message us on WhatsApp with apartment details and desired dates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-step card-3d">
+                        <div class="card-3d-inner">
+                            <div class="step-number">3</div>
+                            <h3>Confirm Booking</h3>
+                            <p>We'll confirm your booking and send payment and stay details</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="http://wa.me/212673625706?text=Hello, I want to inquire about available apartments at Casa Bonita" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Book via WhatsApp Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <p>+212 673-625706</p>
+                        <p>Available 9AM - 9PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@casabonita.com</p>
+                        <p>We respond within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card card-3d">
+                    <div class="card-3d-inner">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>32000 ALHOCIEMA </p>
+                        <p>Prime District, City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p>Have questions? Reach out to us through any of the above channels or use the WhatsApp button for instant assistance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Casa Bonita</h3>
+                    <p>Premium apartment rentals offering comfort, style, and exceptional service for your perfect stay.</p>
+                    <ul class="social-links">
+                        <li>
+                            <a href="https://www.instagram.com/casa_bonita_2025?igsh=MWtxdnQ2YzFoYWZpOQ%3D%3D&utm_source=qr" class="social-link" aria-label="Visit our Instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/share/19vZWGNo87/?mibextid=wwXIfr" class="social-link" aria-label="Visit our Facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://wa.me/212673625706?text=Hello, I want to inquire about available apartments at Casa Bonita" class="social-link" aria-label="Contact us on WhatsApp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Apartments</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-apartment="1">Apartment 1 - 80m²</a></li>
+                        <li><a href="#" data-apartment="2">Apartment 2 - 120m²</a></li>
+                        <li><a href="#" data-apartment="3">Apartment 3 - 120m²</a></li>
+                        <li><a href="#" data-apartment="4">Apartment 4 - 80m²</a></li>
+                        <li><a href="#" data-apartment="5">Apartment 5 - 70m²</a></li>
+                        <li><a href="#" data-apartment="6">Apartment 6 - 70m²</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Casa Bonita. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="http://wa.me/212673625706?text=Hello, I want to inquire about available apartments at Casa Bonita" class="whatsapp-float" aria-label="Chat with us on WhatsApp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        // Apartment Data
+        const apartments = {
+            1: {
+                title: "Apartment 1 - 80m²",
+                price: "$50 / night",
+                description: "Spacious apartment with large living room, perfect for families or groups. Features a comfortable and modern design with high-quality finishes throughout. The apartment includes a fully equipped kitchen, comfortable sleeping arrangements, and a modern bathroom.",
+                size: "80 m²",
+                capacity: "4 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Large living room",
+                    "Modern bathroom"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            2: {
+                title: "Apartment 2 - 120m²",
+                price: "$60 / night",
+                description: "Luxurious apartment with expansive living area, ideal for larger families or groups seeking comfort and space. This apartment features premium finishes, a spacious layout, and all modern amenities for a comfortable stay.",
+                size: "120 m²",
+                capacity: "6 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Central air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Spacious living room",
+                    "Modern bathroom",
+                    "Balcony"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1540518614846-7eded102d7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            3: {
+                title: "Apartment 3 - 120m²",
+                price: "$60 / night",
+                description: "Elegant apartment with generous living space, perfect for families who appreciate style and comfort. This unit offers a harmonious blend of functionality and aesthetic appeal with its thoughtful layout and premium amenities.",
+                size: "120 m²",
+                capacity: "6 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Central air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Spacious living room",
+                    "Modern bathroom",
+                    "Balcony",
+                    "Laundry facilities"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1555854876-c77ea01f84da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            4: {
+                title: "Apartment 4 - 80m²",
+                price: "$55 / night",
+                description: "Modern apartment with spacious layout, offering comfort and functionality for your stay. This well-appointed unit features efficient use of space without compromising on style or comfort, perfect for smaller families or groups.",
+                size: "80 m²",
+                capacity: "4 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Comfortable living room",
+                    "Modern bathroom"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            5: {
+                title: "Apartment 5 - 70m²",
+                price: "$57 / night",
+                description: "Cozy and well-designed apartment perfect for small families or couples seeking a comfortable retreat. This efficiently laid out space maximizes comfort and functionality, offering all essential amenities in a compact footprint.",
+                size: "70 m²",
+                capacity: "4 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Compact living area",
+                    "Modern bathroom"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1540518614846-7eded102d7bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            },
+            6: {
+                title: "Apartment 6 - 70m²",
+                price: "$57 / night",
+                description: "Charming apartment with efficient layout, ideal for longer stays with all the comforts of home. This thoughtfully designed space offers a perfect balance of functionality and comfort, making it ideal for extended visits.",
+                size: "70 m²",
+                capacity: "4 people",
+                beds: "1 large bed + 2 small beds",
+                features: [
+                    "High-speed Wi-Fi",
+                    "Smart TV",
+                    "Fully equipped kitchen",
+                    "Air conditioning",
+                    "Weekly cleaning service",
+                    "Parking space",
+                    "Security surveillance",
+                    "Cozy living area",
+                    "Modern bathroom",
+                    "15% discount for stays longer than a month"
+                ],
+                images: [
+                    "https://images.unsplash.com/photo-1555854876-c77ea01f84da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                ]
+            }
+        };
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            hamburger.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Apartment Modal Functionality
+        const apartmentModal = document.getElementById('apartmentModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalGallery = document.getElementById('modalGallery');
+        const modalDetails = document.getElementById('modalDetails');
+        const viewDetailsButtons = document.querySelectorAll('.view-details');
+        const apartmentLinks = document.querySelectorAll('.footer-links a[data-apartment]');
+        
+        // Function to open apartment modal
+        function openApartmentModal(apartmentId) {
+            const apartment = apartments[apartmentId];
+            
+            if (!apartment) return;
+            
+            // Clear previous content
+            modalGallery.innerHTML = '';
+            modalDetails.innerHTML = '';
+            
+            // Create main image
+            const mainImage = document.createElement('div');
+            mainImage.className = 'modal-main-image';
+            mainImage.innerHTML = `<img src="${apartment.images[0]}" alt="${apartment.title}">`;
+            modalGallery.appendChild(mainImage);
+            
+            // Create thumbnails
+            apartment.images.forEach((image, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'modal-thumbnail';
+                thumbnail.innerHTML = `<img src="${image}" alt="${apartment.title} - Image ${index + 1}">`;
+                thumbnail.addEventListener('click', () => {
+                    mainImage.innerHTML = `<img src="${image}" alt="${apartment.title}">`;
+                });
+                modalGallery.appendChild(thumbnail);
+            });
+            
+            // Create details
+            modalDetails.innerHTML = `
+                <h2>${apartment.title}</h2>
+                <div class="apartment-price">${apartment.price}</div>
+                <p>${apartment.description}</p>
+                
+                <div class="modal-features">
+                    <div class="modal-feature">
+                        <i class="fas fa-ruler-combined"></i>
+                        <div>
+                            <h4>Size</h4>
+                            <p>${apartment.size}</p>
+                        </div>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-user"></i>
+                        <div>
+                            <h4>Capacity</h4>
+                            <p>${apartment.capacity}</p>
+                        </div>
+                    </div>
+                    <div class="modal-feature">
+                        <i class="fas fa-bed"></i>
+                        <div>
+                            <h4>Beds</h4>
+                            <p>${apartment.beds}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Features</h3>
+                <div class="modal-features">
+                    ${apartment.features.map(feature => `
+                        <div class="modal-feature">
+                            <i class="fas fa-check"></i>
+                            <p>${feature}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="http://wa.me/212673625706?text=Hello, I want to book ${apartment.title} at Casa Bonita" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Book This Apartment
+                    </a>
+                </div>
+            `;
+            
+            // Show modal
+            apartmentModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Add event listeners to view details buttons
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const apartmentCard = e.target.closest('.apartment-card');
+                const apartmentId = apartmentCard.getAttribute('data-apartment');
+                openApartmentModal(apartmentId);
+            });
+        });
+        
+        // Add event listeners to apartment links in footer
+        apartmentLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const apartmentId = link.getAttribute('data-apartment');
+                openApartmentModal(apartmentId);
+                
+                // Scroll to apartments section
+                document.getElementById('apartments').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        
+        // Close modal
+        modalClose.addEventListener('click', () => {
+            apartmentModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        apartmentModal.addEventListener('click', (e) => {
+            if (e.target === apartmentModal) {
+                apartmentModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollToTop = document.getElementById('scrollToTop');
+            
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                scrollToTop.classList.add('active');
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                scrollToTop.classList.remove('active');
+            }
+        });
+        
+        // Scroll to top functionality
+        document.getElementById('scrollToTop').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add scroll animation to elements
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.card-3d, .section-title');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.card-3d, .section-title').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Trigger once on load
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
